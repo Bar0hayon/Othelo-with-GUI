@@ -8,7 +8,6 @@ namespace Ex05_Othelo
 {
     internal class GameBoardEngine
     {
-        private const int k_Milliseconds = 575;
         private eCell[,] m_Board;
         private List<Point> m_LegalMoves;
         private int m_BoardSize;
@@ -64,11 +63,11 @@ namespace Ex05_Othelo
 
         private void clearLegalMoves()
         {
-            for(int i = 0; i < m_BoardSize; i++)
+            for (int i = 0; i < m_BoardSize; i++)
             {
-                for(int j = 0; j < m_BoardSize; j++)
+                for (int j = 0; j < m_BoardSize; j++) 
                 {
-                    if(m_Board[i,j] == eCell.LegalMove)
+                    if (m_Board[i, j] == eCell.LegalMove) 
                     {
                         m_Board[i, j] = eCell.Empty;
                     }
@@ -176,7 +175,6 @@ namespace Ex05_Othelo
 
         private int getIndexOfBestMoveFromLegalMoves(eCell i_TurnOf)
         {
-            //Thread.Sleep(k_Milliseconds);////////////
             int bestMoveIndex;
             int[] countMovePoints = new int[m_LegalMoves.Count];
             for (int i = 0; i < m_LegalMoves.Count; i++)

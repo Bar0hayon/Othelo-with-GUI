@@ -1,6 +1,6 @@
 ﻿namespace Ex05_Othelo
 {
-    partial class GameBoardForm
+    public partial class GameBoardForm
     {
         /// <summary>
         /// Required designer variable.
@@ -17,13 +17,11 @@
             {
                 components.Dispose();
             }
+
             base.Dispose(disposing);
         }
 
         #region Windows Form Designer generated code
-
-        
-
         #endregion
     }
 }

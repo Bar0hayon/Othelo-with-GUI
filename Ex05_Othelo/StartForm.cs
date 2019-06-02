@@ -10,10 +10,11 @@ namespace Ex05_Othelo
 {
     public partial class StartForm : Form
     {
-        private int m_BoardSize = 6;
         private const int k_MaxBoardSize = 12;
         private const int k_MinBoardSize = 6;
+        private int m_BoardSize = 6;
         private bool v_IsVsComputer;
+
         public int BoardSize
         {
             get
@@ -21,6 +22,7 @@ namespace Ex05_Othelo
                 return m_BoardSize;
             }
         }
+
         public bool IsVsComputer
         {
             get
@@ -45,8 +47,9 @@ namespace Ex05_Othelo
                 m_BoardSize += 2;
             }
 
-            buttonBoardSize.Text = string.Format("Board Size: {0}x{0} (click to increase)",
-                m_BoardSize);
+            buttonBoardSize.Text = string.Format(
+                                                "Board Size: {0}x{0} (click to increase)",
+                                                m_BoardSize);
         }
 
         private void buttonPlayVsComputer_Click(object sender, EventArgs e)

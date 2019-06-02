@@ -5,9 +5,10 @@ using System.Windows.Forms;
 
 namespace Ex05_Othelo
 {
-    class someForm : Form
+    internal class someForm : Form
     {
         private Button someButton = new Button();
+
         public someForm()
         {
             initializeComponent();
@@ -21,8 +22,6 @@ namespace Ex05_Othelo
 
         private void initializeComponent()
         {
-           
-            
             someButton.Height = 10;
             someButton.Width = 10;
             someButton.Top = 30;

@@ -11,6 +11,7 @@ namespace Ex05_Othelo
 {
     public partial class GameBoardForm : Form
     {
+        private const int k_CellSize = 50;
         private Button[,] m_BoardButtons;
         private int m_BoardSize;
         private eCell m_TurnOf = eCell.White;
@@ -19,7 +20,6 @@ namespace Ex05_Othelo
         private eCell m_Winner;
         private int m_WhitePoints;
         private int m_BlackPoints;
-        private const int k_CellSize = 50;
 
         public int WhitePoints
         {
@@ -45,7 +45,7 @@ namespace Ex05_Othelo
             }
         }
 
-        public GameBoardForm(int i_BoardSize , bool i_IsVsComputer)
+        public GameBoardForm(int i_BoardSize, bool i_IsVsComputer)
         {
             m_BoardSize = i_BoardSize;
             v_IsVsComputer = i_IsVsComputer;
@@ -58,7 +58,7 @@ namespace Ex05_Othelo
         {
             this.MaximizeBox = false;
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
-            this.ClientSize = new System.Drawing.Size(k_CellSize * m_BoardSize + 20, k_CellSize * m_BoardSize + 20);
+            this.ClientSize = new System.Drawing.Size((k_CellSize * m_BoardSize) + 20, (k_CellSize * m_BoardSize) + 20);
             this.Name = "GameBoardForm";
             this.Text = string.Format("Othelo - {0}'s turn", m_TurnOf.ToString());
             this.StartPosition = FormStartPosition.CenterScreen;
@@ -195,15 +195,12 @@ namespace Ex05_Othelo
 
         private void setButtonProperties(int i_x, int i_y)
         {
-            //m_BoardButtons[i_x, i_y].Width = (this.ClientSize.Width - 20) / m_BoardSize;
             m_BoardButtons[i_x, i_y].Width = k_CellSize;
             m_BoardButtons[i_x, i_y].Height = m_BoardButtons[i_x, i_y].Width;
-            //m_BoardButtons[i_x, i_y].Text = "O";
-            m_BoardButtons[i_x, i_y].Top = 10 + (i_x *m_BoardButtons[i_x, i_y].Height);
+            m_BoardButtons[i_x, i_y].Top = 10 + (i_x * m_BoardButtons[i_x, i_y].Height);
             m_BoardButtons[i_x, i_y].Left = 10 + (i_y * m_BoardButtons[i_x, i_y].Width);
             m_BoardButtons[i_x, i_y].Name = string.Format("buttonCell{0},{1}", i_x, i_y);
-            //m_BoardButtons[i_x, i_y].BackColor = getButtonBackColor(i_x, i_y);
-            m_BoardButtons[i_x, i_y].Enabled = (m_GameBoardEngine.Board[i_x, i_y] == eCell.LegalMove);
+            m_BoardButtons[i_x, i_y].Enabled = m_GameBoardEngine.Board[i_x, i_y] == eCell.LegalMove;
             m_BoardButtons[i_x, i_y].BackgroundImage = getBackGroundImage(i_x, i_y);
             m_BoardButtons[i_x, i_y].BackgroundImageLayout = ImageLayout.Stretch;
         }
@@ -212,7 +209,7 @@ namespace Ex05_Othelo
         {
             Image backGroundImage;
             string path = string.Format("{0}\\..\\..\\", System.IO.Directory.GetCurrentDirectory());
-            switch (m_GameBoardEngine.Board[i_x,i_y])
+            switch (m_GameBoardEngine.Board[i_x, i_y])
             {
                 case eCell.Black:
                     backGroundImage = Image.FromFile(path + "CoinRed.png");
@@ -230,27 +227,5 @@ namespace Ex05_Othelo
 
             return backGroundImage;
         }
-
-        //private Color getButtonBackColor(int i_x, int i_y)
-        //{
-        //    Color buttonBackColor = new Color();
-        //    switch (m_GameBoardEngine.Board[i_x,i_y])
-        //    {
-        //        case eCell.Black:
-        //            buttonBackColor = Color.Black;
-        //            break;
-        //        case eCell.White:
-        //            buttonBackColor = Color.White;
-        //            break;
-        //        case eCell.LegalMove:
-        //            buttonBackColor = Color.LimeGreen;
-        //            break;
-        //        default:
-        //            buttonBackColor = Color.LightGray;
-        //            break;
-        //    }
-
-        //    return buttonBackColor;
-        //}
     }
 }

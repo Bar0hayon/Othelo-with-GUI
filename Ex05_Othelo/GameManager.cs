@@ -32,8 +32,7 @@ namespace Ex05_Othelo
                 messageString = getMessageString();
         }
             while (m_GameBoardForm.DialogResult == DialogResult.OK &&
-            MessageBox.Show(messageString, "Othelo",
-            MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK);
+            MessageBox.Show(messageString, "Othelo", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK);
         }
 
         private string getMessageString()
@@ -42,25 +41,33 @@ namespace Ex05_Othelo
             if(m_GameBoardForm.Winner == eCell.Black)
             {
                 m_BlackWinsCount++;
-                messageStringBuilder.Append(string.Format("Black Won!! ({0}/{1}) ({2}/{3})", 
-                    m_GameBoardForm.BlackPoints,m_GameBoardForm.WhitePoints, m_BlackWinsCount,
-                    m_WhiteWinsCount));
+                messageStringBuilder.Append(string.Format(
+                                            "Black Won!! ({0}/{1}) ({2}/{3})", 
+                                            m_GameBoardForm.BlackPoints,
+                                            m_GameBoardForm.WhitePoints,
+                                            m_BlackWinsCount,
+                                            m_WhiteWinsCount));
             }
             else if(m_GameBoardForm.Winner == eCell.White)
             {
                 m_WhiteWinsCount++;
-                messageStringBuilder.Append(string.Format("White Won!! ({0}/{1}) ({2}/{3})",
-                   m_GameBoardForm.WhitePoints, m_GameBoardForm.BlackPoints, m_WhiteWinsCount,
-                   m_BlackWinsCount ));
+                messageStringBuilder.Append(string.Format(
+                                            "White Won!! ({0}/{1}) ({2}/{3})",
+                                            m_GameBoardForm.WhitePoints, 
+                                            m_GameBoardForm.BlackPoints, 
+                                            m_WhiteWinsCount,
+                                            m_BlackWinsCount ));
             }
             else
             {
-                messageStringBuilder.Append(string.Format("Tie!! ({0}/{0}) ({1}/{2})",
-                    m_GameBoardForm.WhitePoints, m_WhiteWinsCount, m_BlackWinsCount));
+                messageStringBuilder.Append(string.Format(
+                                                   "Tie!! ({0}/{0}) ({1}/{2})",
+                                                   m_GameBoardForm.WhitePoints, 
+                                                   m_WhiteWinsCount, 
+                                                   m_BlackWinsCount));
             }
 
             messageStringBuilder.Append("\nWould you like another round?");
-
             return messageStringBuilder.ToString();
         }
     }
