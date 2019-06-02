@@ -79,10 +79,10 @@ namespace Ex05_Othelo
         {
             Point userMove = getUserMovePoint((Button)sender);
             m_GameBoardEngine.MakeUserMove(userMove, m_TurnOf);
-            toggleTurnAndContinu();
+            toggleTurnAndContinue();
         }
 
-        private void toggleTurnAndContinu()
+        private void toggleTurnAndContinue()
         {
             toggleTurn();
             this.Text = string.Format("Othelo - {0}'s turn", m_TurnOf.ToString());
@@ -153,11 +153,11 @@ namespace Ex05_Othelo
             {
                 setAllButtons();
             }
-            else
+            else if (v_IsVsComputer)
             {
                 Point PcMove = m_GameBoardEngine.GetPcMove(m_TurnOf);
                 m_GameBoardEngine.MakeUserMove(PcMove, m_TurnOf);
-                toggleTurnAndContinu();
+                toggleTurnAndContinue();
             }
         }
 

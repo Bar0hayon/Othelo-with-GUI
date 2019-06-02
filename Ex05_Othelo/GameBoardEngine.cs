@@ -175,6 +175,7 @@ namespace Ex05_Othelo
 
         private int getIndexOfBestMoveFromLegalMoves(eCell i_TurnOf)
         {
+            Thread.Sleep(575);
             int bestMoveIndex;
             int[] countMovePoints = new int[m_LegalMoves.Count];
             for (int i = 0; i < m_LegalMoves.Count; i++)
