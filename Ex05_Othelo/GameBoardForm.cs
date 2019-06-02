@@ -153,7 +153,7 @@ namespace Ex05_Othelo
             {
                 setAllButtons();
             }
-            else if (v_IsVsComputer)
+            else
             {
                 Point PcMove = m_GameBoardEngine.GetPcMove(m_TurnOf);
                 m_GameBoardEngine.MakeUserMove(PcMove, m_TurnOf);
