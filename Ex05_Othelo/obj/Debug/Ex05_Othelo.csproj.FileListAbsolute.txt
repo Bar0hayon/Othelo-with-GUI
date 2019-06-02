@@ -1,0 +1,10 @@
+C:\Users\baroh\source\repos\B19 Ex05 Bar 204074629 Daniel 204509780\Ex05_Othelo\bin\Debug\Ex05_Othelo.exe
+C:\Users\baroh\source\repos\B19 Ex05 Bar 204074629 Daniel 204509780\Ex05_Othelo\bin\Debug\Ex05_Othelo.pdb
+C:\Users\baroh\source\repos\B19 Ex05 Bar 204074629 Daniel 204509780\Ex05_Othelo\obj\Debug\Ex05_Othelo.csprojAssemblyReference.cache
+C:\Users\baroh\source\repos\B19 Ex05 Bar 204074629 Daniel 204509780\Ex05_Othelo\obj\Debug\Ex05_Othelo.Properties.Resources.resources
+C:\Users\baroh\source\repos\B19 Ex05 Bar 204074629 Daniel 204509780\Ex05_Othelo\obj\Debug\Ex05_Othelo.csproj.GenerateResource.cache
+C:\Users\baroh\source\repos\B19 Ex05 Bar 204074629 Daniel 204509780\Ex05_Othelo\obj\Debug\Ex05_Othelo.csproj.CoreCompileInputs.cache
+C:\Users\baroh\source\repos\B19 Ex05 Bar 204074629 Daniel 204509780\Ex05_Othelo\obj\Debug\Ex05_Othelo.exe
+C:\Users\baroh\source\repos\B19 Ex05 Bar 204074629 Daniel 204509780\Ex05_Othelo\obj\Debug\Ex05_Othelo.pdb
+C:\Users\baroh\source\repos\B19 Ex05 Bar 204074629 Daniel 204509780\Ex05_Othelo\obj\Debug\Ex05_Othelo.StartForm.resources
+C:\Users\baroh\source\repos\B19 Ex05 Bar 204074629 Daniel 204509780\Ex05_Othelo\obj\Debug\Ex05_Othelo.GameBoardForm.resources
