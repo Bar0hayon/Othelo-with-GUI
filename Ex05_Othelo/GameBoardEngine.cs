@@ -38,10 +38,10 @@ namespace Ex05_Othelo
                 }
             }
 
-            m_Board[((i_BoardSize / 2) - 1), ((i_BoardSize / 2) - 1)] = eCell.White;
-            m_Board[(i_BoardSize / 2), (i_BoardSize / 2)] = eCell.White;
-            m_Board[(i_BoardSize / 2), (i_BoardSize / 2) - 1] = eCell.Black;
-            m_Board[(i_BoardSize / 2) - 1, (i_BoardSize / 2)] = eCell.Black;
+            m_Board[((i_BoardSize / 2) - 1), ((i_BoardSize / 2) - 1)] = eCell.Yellow;
+            m_Board[(i_BoardSize / 2), (i_BoardSize / 2)] = eCell.Yellow;
+            m_Board[(i_BoardSize / 2), (i_BoardSize / 2) - 1] = eCell.Red;
+            m_Board[(i_BoardSize / 2) - 1, (i_BoardSize / 2)] = eCell.Red;
         }
 
         private void makeUserMove(Point i_UserMove, eCell i_TurnOf, eCell[,] i_Board)
@@ -281,13 +281,13 @@ namespace Ex05_Othelo
         private eCell getOppositeColor(eCell i_Color)
         {
             eCell oppositeColor;
-            if (i_Color == eCell.Black)
+            if (i_Color == eCell.Red)
             {
-                oppositeColor = eCell.White;
+                oppositeColor = eCell.Yellow;
             }
             else
             {
-                oppositeColor = eCell.Black;
+                oppositeColor = eCell.Red;
             }
 
             return oppositeColor;

@@ -38,21 +38,21 @@ namespace Ex05_Othelo
         private string getMessageString()
         {
             StringBuilder messageStringBuilder = new StringBuilder();
-            if(m_GameBoardForm.Winner == eCell.Black)
+            if(m_GameBoardForm.Winner == eCell.Red)
             {
                 m_BlackWinsCount++;
                 messageStringBuilder.Append(string.Format(
-                                            "Black Won!! ({0}/{1}) ({2}/{3})", 
+                                            "Red Won!! ({0}/{1}) ({2}/{3})", 
                                             m_GameBoardForm.BlackPoints,
                                             m_GameBoardForm.WhitePoints,
                                             m_BlackWinsCount,
                                             m_WhiteWinsCount));
             }
-            else if(m_GameBoardForm.Winner == eCell.White)
+            else if(m_GameBoardForm.Winner == eCell.Yellow)
             {
                 m_WhiteWinsCount++;
                 messageStringBuilder.Append(string.Format(
-                                            "White Won!! ({0}/{1}) ({2}/{3})",
+                                            "Yellow Won!! ({0}/{1}) ({2}/{3})",
                                             m_GameBoardForm.WhitePoints, 
                                             m_GameBoardForm.BlackPoints, 
                                             m_WhiteWinsCount,

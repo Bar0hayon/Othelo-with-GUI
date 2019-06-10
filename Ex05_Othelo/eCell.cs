@@ -7,8 +7,8 @@ namespace Ex05_Othelo
     public enum eCell
     {
         Empty,
-        Black,
-        White,
+        Red,
+        Yellow,
         LegalMove
     }
 }

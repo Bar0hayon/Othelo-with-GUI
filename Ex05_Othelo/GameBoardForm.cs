@@ -14,7 +14,7 @@ namespace Ex05_Othelo
         private const int k_CellSize = 50;
         private Button[,] m_BoardButtons;
         private int m_BoardSize;
-        private eCell m_TurnOf = eCell.White;
+        private eCell m_TurnOf = eCell.Yellow;
         private bool v_IsVsComputer;
         private GameBoardEngine m_GameBoardEngine;
         private eCell m_Winner;
@@ -107,8 +107,8 @@ namespace Ex05_Othelo
 
         private void endGame()
         {
-            m_BlackPoints = getPointsByColor(eCell.Black);
-            m_WhitePoints = getPointsByColor(eCell.White);
+            m_BlackPoints = getPointsByColor(eCell.Red);
+            m_WhitePoints = getPointsByColor(eCell.Yellow);
             m_Winner = setWinner();
             this.DialogResult = DialogResult.OK;
             this.Close();
@@ -119,11 +119,11 @@ namespace Ex05_Othelo
             eCell winner;
             if(m_WhitePoints > m_BlackPoints)
             {
-                winner = eCell.White;
+                winner = eCell.Yellow;
             }
             else if(m_BlackPoints > m_WhitePoints)
             {
-                winner = eCell.Black;
+                winner = eCell.Red;
             }
             else
             {
@@ -149,7 +149,7 @@ namespace Ex05_Othelo
 
         private void continueGame()
         {
-            if (m_TurnOf == eCell.White || !v_IsVsComputer)
+            if (m_TurnOf == eCell.Yellow || !v_IsVsComputer)
             {
                 setAllButtons();
             }
@@ -174,13 +174,13 @@ namespace Ex05_Othelo
 
         private void toggleTurn()
         {
-            if (m_TurnOf == eCell.Black)
+            if (m_TurnOf == eCell.Red)
             {
-                m_TurnOf = eCell.White;
+                m_TurnOf = eCell.Yellow;
             }
             else
             {
-                m_TurnOf = eCell.Black;
+                m_TurnOf = eCell.Red;
             }
         }
 
@@ -211,10 +211,10 @@ namespace Ex05_Othelo
             string path = string.Format("{0}\\..\\..\\", System.IO.Directory.GetCurrentDirectory());
             switch (m_GameBoardEngine.Board[i_x, i_y])
             {
-                case eCell.Black:
+                case eCell.Red:
                     backGroundImage = Image.FromFile(path + "CoinRed.png");
                     break;
-                case eCell.White:
+                case eCell.Yellow:
                     backGroundImage = Image.FromFile(path + "CoinYellow.png");
                     break;
                 case eCell.LegalMove:
